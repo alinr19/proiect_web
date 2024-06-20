@@ -1,0 +1,323 @@
+#link-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 20px; /* Dimensiunea butonului */
+  height: 20px; /* Dimensiunea butonului */
+  padding: 5px; /* Scădem padding-ul pentru a mări butonul */
+  background: linear-gradient(#333, #555, #333); /* Background gradient */
+  border-radius: 50%; /* Butonul este acum un cerc perfect */
+  border: 2px dashed #fff; /* Border liniat */
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5; /* Transparent initial */
+  transition: opacity 0.5s, transform 0.5s, border-radius 0.5s; /* Tranziție pentru opacitate, transform și border-radius */
+  overflow: hidden;
+}
+
+/* Stilizează săgeata pentru a fi poziționată perfect în centru */
+#link-top::before {
+  content: "\2191"; /* Codul Unicode pentru săgeată în sus */
+  display: block;
+  font-size: 16px; /* Mărimea fontului pentru săgeată */
+  text-align: center;
+  line-height: 20px; /* Înalțimea butonului */
+}
+
+/* Stilizează butonul la hover */
+#link-top:hover {
+  opacity: 1; /* Opaque la hover */
+}
+
+/* Stilizează săgeata la hover */
+#link-top:hover::before {
+  transform: rotate(360deg); /* Rotire la hover */
+}
+
+/* Stilizează butonul la click */
+#link-top:active {
+  transform: scale(1.1) translateX(1px); /* Mărește butonul și mută-l ușor spre dreapta la click */
+}
+
+#link-top[title]:hover::after {
+  content: attr(title); /* Tooltip la hover */
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+
+body {
+  background-color: rgb(196, 230, 248);
+  padding-bottom: 20px; /* Păstrează padding-ul original */
+}
+
+
+footer {
+  margin-top: +20px; /* Compensează paddingul bottom al body-ului pentru a preveni lipirea footer-ului */
+}
+
+
+header, footer {
+  margin-bottom: 30px; /* Adaugă o distanță de 20px între header și body, și între body și footer */
+  width: 100%; /* Asigură că header-ul și footer-ul au aceeași lățime cu conținutul body-ului */
+}
+
+
+
+
+/* Adaugă stiluri pentru videoclip */
+#grid-pagina video {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 2 auto;
+  border: 2px solid var(--culoare4);  /* Adaugă o bordură de 2px solidă de culoare albastră */
+  border-radius: 10px; /* Adaugă o rază de colț de 10px pentru a rotunji colțurile */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1); /* Adaugă o umbră de 10px */
+}
+
+
+
+
+.containers_orar {
+  width: 98%;
+  overflow-x: auto;
+  /* Păstrează alte stiluri existente pentru containerul orarului */
+}
+#tab-orar {
+  width: 100%;
+  /* Păstrează alte stiluri existente pentru tabelul orarului */
+}
+  #tab-orar {
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+  
+  caption {
+    caption-side: bottom;
+  }
+  
+  #tab-orar th {
+    border: 1px solid #000;
+    padding: 8px;
+    font-weight: bold;
+  }
+  
+  #tab-orar td {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+  
+  #tab-orar tbody tr {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  #tab-orar tbody tr:nth-child(even) {
+    color: var(--culoare1);
+  }
+  
+  #tab-orar tbody tr:nth-child(odd) {
+    color: var(--culoare5);
+  }
+  
+  #tab-orar tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.75s ease;
+  }
+  
+  #tab-orar tbody tr:hover td {
+    font-size: 120%;
+    transition: font-size 0.75s ease;
+  }
+
+  .containers_orar {
+    overflow-x: auto; 
+    max-width: 100%; 
+  }
+
+
+
+
+
+ header h1 {
+    font-size: 48px; /* Mărimea textului */
+    font-weight: bold; /* Text bold pentru o prezență mai puternică */
+    color:var(--culoare1);  /* Albastru */
+    text-transform: uppercase; /* Textul se transformă în majuscule */
+    letter-spacing: 4px; /* Spațierea între litere */
+    margin: 0 auto; /* Margin pe toate laturile și alinierea pe mijloc */
+    padding: 20px 0; /* Spatiu între titlu și meniu */
+    text-align: center; /* Alinierea pe mijloc */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Umbrire text */
+  }
+  
+
+
+
+  
+
+  @media screen and (max-width: 600px) {
+    .table-container {
+      overflow-x: auto;
+    }
+  }
+    @media (max-width: 1200px) {
+        .containers_galery img {
+            width: 50%;
+            height: auto; 
+        }
+    }
+    @media (max-width: 1200px) {
+      .containers_welcome img {
+          width: 50%;
+          height: auto; 
+      }
+  }
+  @media (max-width: 1200px) {
+    .video-container iframe{
+        width: 100%; 
+        height: auto;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    *{animation: none !important;}
+  }
+
+
+
+
+
+
+
+  
+
+  iframe {
+    width: 500px; /* Reducem lățimea iframe-ului */
+    height: 325px; /* Reducem înălțimea iframe-ului */
+    border: 3px solid #0015d3;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+  
+  /* Container pentru iframe și taburi */
+  .container-iframe {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end; /* Aliniere la dreapta */
+    gap: 0;
+    width: 100%;
+  }
+  
+  /* Stilizare taburi */
+  .taburi-iframe {
+    display: flex;
+    flex-direction: column;
+  }
+
+/* Stilizare taburi iframe */
+.taburi-iframe > a {
+  display: flex;
+  position: relative;
+  border-top: 2px double var(--culoare4); /* Linie dublă sus */
+  border-bottom: 2px double var(--culoare4); /* Linie dublă jos */
+  border-right: 2px double  var(--culoare4); /* Linie dublă dreapta */
+  border-left: 2px double var(--culoare1); /* Linie dublă stânga */
+  background-color: var(--culoare2);
+  padding: 0.5em;
+  text-decoration: none;
+  color: #000;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 0;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.taburi-iframe > a:hover {
+  background-color: #0d30c9;
+}
+
+.taburi-iframe > a:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #007bff;
+  border-radius: 0 10px 10px 0;
+  transition: left 0.3s;
+}
+
+/* subtritrari */
+video {
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+}
+
+::cue {
+  background-color: rgba(255, 255, 255, 0.7); /* c1 deschisa */
+  color: #d40606; /* c2 inchisa */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+::cue(b) {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+  video {
+      max-width: 100%;
+  }
+}
+
+
+/* linkuri sterlz */
+:root {
+  --visited-color: #5d7afa; /* Alege culoarea dorită pentru linkurile vizitate */
+}
+
+/* Linkuri vizitate */
+a:visited {
+  color: var(--visited-color);
+}
+
+/* Linkuri externe */
+a[href^="http"]::before {
+  content: "🔗"; /* Alege simbolul dorit */
+  font-size: 1.5em; /* Ajustează dimensiunea simbolului */
+  margin-right: 5px; /* Spațiu între simbol și link */
+}
+
+/* Simbol la hover */
+a:hover::after {
+  content: " 🔍"; /* Alege simbolul dorit */
+  color: rgb(0, 4, 255); /* Culoarea simbolului */
+}
+
+/* Efect de background radial la hover */
+a:not(.menu):hover {
+  background: radial-gradient(circle, rgba(0, 162, 255, 0.5) 0%, rgba(0, 174, 255, 0.5) 40%, transparent 80%, transparent 100%);
+  background-size: 100%;
+  background-position: center;
+  transition: background-size 0.3s ease;
+}
+
+a:not(.menu) {
+  background-size: 0%;
+  transition: background-size 0.3s ease;
+}
+
+/* Border la click pe link */
+a:active {
+  border: 2px solid rgb(0, 25, 107); /* Alege stilul și culoarea dorită pentru border */
+}
