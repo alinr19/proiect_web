@@ -16,18 +16,29 @@
   <main>
     <div id="grid-pagina">
 
-
-        <section id="welcome">
-           <h2></h2>
-           <div class="containers_welcome">
-           <center><q>Bine ai venit la cel mai mare si vast targ de masini cu cea mai tare platforma online. AUTOSELL</q></center>
-           <p></p>
-           <p></p>
-           <center><video src="./resurse/video/lambo.mp4" autoplay muted loop width="800" height="500"></video></center>
-          <center><p><em><b>Atentie!: </b></em> În momentul în care alegi o masina , te astepam fizic la unul din targurile noastr din capitala.</p></center>
-          </div>
-        </section>
-
+      <section id="welcome">
+        <h2></h2>
+        <div class="containers_welcome">
+            <section id="reflection">
+                <div class="reflect-text">
+                    <h1 class="text">Bine ai venit la cel mai mare si vast targ de masini cu cea mai tare platforma online. AUTOSELL</h1>
+                    <h1 class="text-reflection">Bine ai venit la cel mai mare si vast targ de masini cu cea mai tare platforma online. AUTOSELL</h1>
+                </div>
+            </section>
+            <p></p>
+            <p></p>
+            <center>
+                <video controls poster="resurse/imagini/lambo_poster.jpg" preload="metadata">
+                    <source src="resurse/video/lambo.mp4" type="video/mp4">
+                    <source src="resurse/video/lambo.ogv" type="video/ogv">
+                    <track default src="resurse/video/mesaje_ro.vtt" kind="captions" srclang="ro" label="romana">
+                    <track src="resurse/video/mesaje_en.vtt" kind="captions" srclang="en" label="engleza">
+                    Your browser does not support the video tag.
+                </video>
+            </center>
+            <center><p><em><b>Atentie!: </b></em> În momentul în care alegi o masina , te astepam fizic la unul din targurile noastr din capitala.</p></center>
+        </div>
+     </section>
 
 
 
@@ -99,52 +110,34 @@
              <p>4. <b> DATA: 28 </b>:Din vara acestui an , studentii facultatii de matematica si informatica , au test drive gratuit la toate masinile</p>
         </section>
 
-
-
-
-
         
+
         <section id="galery">
-            <h3>Galerie Masini:</h3>
-            <div class="containers_galery">
-            <center><p>Aici sunt afisate doar cateva imagini cu masinile noastre in stoc , pentru a vedea mai multe imagini : <a href="https://twitter.com/tweeter/cars/" target="_blank">Tweeter</a>.</p></center>
-          
-            <div style="text-align: center;">
-                <figure style="margin-right: 20px;">
-                    <picture>
-                        <source srcset="./resurse/imagini/masina1.webp" media="(max-width:700px)"/>
-                        <source srcset="./resurse/imagini/masina1.webp" media="(max-width:1200px)"/>
-                        <img src="./resurse/imagini/masina1.webp"  width="350" height="200"/>
-                    </picture>
-                    <figcaption>Rolls Royce</figcaption>
-                </figure>
-            
-
-                <figure style="display: inline-block;">
-                    <picture>
-                        <source srcset="./resurse/imagini/amg.jpeg" media="(max-width:700px)"/>
-                        <source srcset="./resurse/imagini/amg.jpg" media="(max-width:1200px)"/>
-                        <img src="./resurse/imagini/urus.webp" " width="250" height="175" />
-                    </picture>
-                    <figcaption>Lamborgini Urus</figcaption>
-                </figure>
-
-            
-                <figure style="display: inline-block;">
-                    <picture>
-                        <source srcset="./resurse/imagini/masina.jpeg" media="(max-width:700px)"/>
-                        <source srcset="./resurse/imagini/masina.jpeg" media="(max-width:1200px)"/>
-                        <img src="./resurse/imagini/masina.jpg"  width="270" height="175" />
-                    </picture>
-                    <figcaption>Lamborghini Aventador</figcaption>
-                </figure>
-            </div>
-        </div>
+          <h3>Galerie Masini:</h3>
+          <div class="containers_galery">
+            <% 
+              var vtimp = ["dimineata", "pranz", "seara"];
+              var d = new Date();
+              var timpCurenta = vtimp[Math.floor(d.getHours() / 8)];
+              var imaginiAfisate = imagini.filter(imag => imag.timp.includes(timpCurenta));
+              imaginiAfisate = imaginiAfisate.slice(0, 6); // Trunchiere la un număr divizibil cu 3
+            %>
+            <% imaginiAfisate.forEach((imag, index) => { %>
+                <div class="imag imag<%= index %>">
+                    <figure>
+                        <picture>
+                          <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
+                          <img class="galery-image" src="<%= imag.fisier %>" alt="<%= imag.continut_alternativ || imag.nume_poza %>"/>
+                        </picture>
+                        <figcaption>
+                            <p><%= imag.descriere %></p>
+                        </figcaption>
+                    </figure>
+                </div>
+            <% }) %>
+          </div>
         </section>
-
-
-
-
+        
 
         <section id="anunturi">
             <h4>Anunturi:</h4> <p></p>

@@ -1,39 +1,60 @@
 {
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
+		
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie","aprilie"]
-		},
-		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie"]
-			
-		},
-		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
-		},
-		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
-			"luni":["noiembrie","aprilie"]
-		},
-		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
-		},
-		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
-		},
-		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"fisier":"lamborghini.png",
+			"descriere":"Lamborghini",
+			 "timp": ["dimineata" ,"pranz", "seara"]
 		}
+		,
+		{
+			"fisier":"rols.png",
+			"descriere":"Rols Royce",
+			"timp":["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"mercedes.png",
+			"descriere":"Mercedes AMG",
+			"timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"urus.png",
+			"descriere":"Urus SUV",
+			"timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"skoda.png",
+			"descriere":"Skoda RS",
+			 "timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"mustang.png",
+			"descriere":"Ford Mustang",
+			 "timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"bmw.png",
+			"descriere":"BMW M8",
+			 "timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"logan.png",
+			"descriere":"Dacia Logan",
+			 "timp": ["dimineata" ,"pranz", "seara"]
+		}
+		,
+		{
+			"fisier":"audi.png",
+			"descriere":"Audi RS7",
+			 "timp": ["dimineata" ,"pranz", "seara"]
+		}
+
 	]
 }

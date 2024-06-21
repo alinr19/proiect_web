@@ -265,7 +265,7 @@ video {
 
 ::cue {
   background-color: rgba(255, 255, 255, 0.7); /* c1 deschisa */
-  color: #d40606; /* c2 inchisa */
+  color: #0609d4; /* c2 inchisa */
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -311,13 +311,156 @@ a:not(.menu):hover {
   background-position: center;
   transition: background-size 0.3s ease;
 }
-
 a:not(.menu) {
   background-size: 0%;
   transition: background-size 0.3s ease;
 }
-
 /* Border la click pe link */
 a:active {
   border: 2px solid rgb(0, 25, 107); /* Alege stilul și culoarea dorită pentru border */
 }
+
+
+
+
+/* ---------------imagini galerie statica--------------------- */
+
+.galery-image {
+  max-width: 300px;
+  height: auto; /* Păstrează proporțiile imaginii */
+}
+.containers_galery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.imag {
+  flex: 1 1 calc(33.333% - 40px); /* Ajustează lățimea pentru a se potrivi în 3 coloane cu spațiu între ele */
+  box-sizing: border-box;
+}
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: 1em;
+  color: var(--culoare1); 
+}
+
+
+
+
+/* -------------------Setări pentru grid---------------------- */
+.containers_galery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2 coloane pe linie */
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "img0 img1"
+    "img2 img2"
+    "img3 img4"
+    "img5 img5";
+}
+.imag {
+  overflow: hidden;
+  text-align: center;
+}
+.imag0 { grid-area: img0; }
+.imag1 { grid-area: img1; }
+.imag2 { grid-area: img2; }
+.imag3 { grid-area: img3; }
+.imag4 { grid-area: img4; }
+.imag5 { grid-area: img5; }
+
+.galery-image {
+  width: 90%; /* Dimensiunea imaginii puțin mai mare */
+  height: auto;
+  border: 5px solid #0e017e; /* Chenar albastru închis */
+  border-radius: 15px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru efect estetic */
+  transition: transform 0.5s, border-radius 0.5s, box-shadow 0.5s; /* Tranziție rapidă */
+}
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: 1em;
+  color: var(--culoare1); /* Albastru */
+}
+/* Tranziții pentru hover */
+.imag:hover .galery-image {
+  transform: rotate(360deg) scale(1.5); /* Rotire 360 de grade și mărire cu 50% */
+  border-radius: 50%; /* Rotunjirea colțurilor */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Umbră mai intensă la hover */
+}
+@media screen and (max-width: 768px) {
+  .containers_galery {
+    grid-template-columns: 1fr; /* 1 coloană pe ecrane mici */
+    grid-template-areas: 
+      "img0"
+      "img1"
+      "img2"
+      "img3"
+      "img4"
+      "img5";
+  }
+}
+
+
+/* text etapa 5 */
+.reflect-text {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%; /* Lățime completă pentru centrare */
+}
+
+.text {
+  font-size: 1em; /* Ajustează dimensiunea fontului pentru text */
+  color: black;
+  text-align: center;
+}
+
+.text-reflection {
+  position: absolute;
+  top: 40%; /* Poziționează reflexia exact sub text */
+  left: 0;
+  right: 0;
+  font-size: 1em; /* Ajustează dimensiunea fontului pentru reflexie */
+  color: black;
+  opacity: 0.5; /* Setează opacitatea pentru efect de reflexie */
+  transform: scaleY(-1); /* Inversează textul pentru efect de reflexie */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradient pentru reflexie */
+}
+
+.reflect-text:hover .text-reflection {
+  animation: move-reflection 1s infinite linear; /* Animație continuă */
+}
+
+@keyframes move-reflection {
+  0% {
+    transform: scaleY(-1) translateY(0);
+  }
+  50% {
+    transform: scaleY(-1) translateY(5px); /* Ajustează pentru mișcare */
+  }
+  100% {
+    transform: scaleY(-1) translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
